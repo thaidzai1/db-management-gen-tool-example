@@ -1,0 +1,47 @@
+
+version: 1
+version_name: 1 - Init
+fields:
+  - name: id
+    old_name:
+    type: bigserial
+    primary: true
+  - name: vendor_quotation_id
+    old_name:
+    type: bigint
+    not_null: true
+  - name: vendor_key_fee_id
+    type: bigint
+    not_null: true
+  - name: upper_threshold
+    type: double precision
+    not_null: true
+  - name: lower_threshold
+    type: double precision
+    not_null: true
+  - name: unit_price_quoted
+    type: double precision
+  - name: minimun_amount_billed
+    type: double precision
+  - name: action_admin_id
+    type: bigint
+  - name: created_at
+    old_name:
+    type: timestamptz
+  - name: updated_at
+    old_name:
+    type: timestamptz
+indexs:
+  - name: vendor_fee_tier_id_idx
+    key: id
+    using: btree
+  - name: vendor_fee_tier_vendor_quotation_id_idx
+    key: vendor_quotation_id
+    using: btree
+  - name: vendor_fee_tier_vendor_key_fee_id_idx
+    key: vendor_key_fee_id
+    using: btree
+
+drop_fields:
+#  -name: fieldname
+#  -name: fieldname

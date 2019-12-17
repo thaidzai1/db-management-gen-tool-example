@@ -1,0 +1,16 @@
+dropped_tables:
+    - tracking_number
+    - quotation
+    - quotation_charge
+    - invoice
+    - invoice_goods_type
+    - mawb
+    - customs_declare_port
+    - goods_type
+    - hawb
+    - merchant_plan_order
+    - payment_type
+    - shipping_instruction
+    - tracking_merchant_order_rel
+    - tracking_number_history
+    - transit_quotation
