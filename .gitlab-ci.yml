@@ -22,6 +22,7 @@ gen:
   script:
     - sqitch.git -schema schema/schema.yml -name ${CI_COMMIT_SHA} -d ${CI_COMMIT_SHA}
     - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ && git commit -m "[ROBOT] Auto generate deploy" && git push origin tmp_branch:master'
+  interruptible: true
   rules:
     - changes:
       - sqitch.plan
@@ -37,7 +38,8 @@ staging:
     - changes:
       - sqitch.plan
       - deploy/*
-    - when: manual
+      when: manual
+    - when: never
 
 production:
   stage: production
@@ -47,4 +49,5 @@ production:
     - changes:
       - sqitch.plan
       - deploy/*
-    - when: manual
+      when: manual
+    - when: never
