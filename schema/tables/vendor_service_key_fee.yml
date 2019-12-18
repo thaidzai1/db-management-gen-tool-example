@@ -28,7 +28,8 @@ indexs:
   - name: vendor_service_id_idx
     key: id
     using: btree
-
+histories:
+  none_field: true
 drop_fields:
 #  -name: fieldname
 #  -name: fieldname
