@@ -55,6 +55,8 @@ staging:
       - sqitch.plan
       - deploy/*
       when: manual
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+      when: never
     - when: never
 
 production:
