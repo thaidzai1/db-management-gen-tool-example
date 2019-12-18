@@ -78,7 +78,8 @@ indexs:
   - name: vendor_active_idx
     key: active
     using: btree
-
+histories:
+  - none_field: true
 drop_fields:
 #  -name: fieldname
 #  -name: fieldname
