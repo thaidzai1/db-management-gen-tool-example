@@ -50,10 +50,12 @@ staging:
     - make deploy_stag
     - 'curl -X POST ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/merge_requests -H "Content-Type: application/json" -H "PRIVATE-TOKEN: ${API_TOKEN}" -d "{\"id\": \"${CI_PROJECT_ID}\", \"source_branch\": \"staging\", \"target_branch\": \"master\", \"title\": \"[ROBOT] Auto create merge request from staging to master\"}"'
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "staging" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+    - if: '$CI_COMMIT_REF_NAME == "staging"'
       changes:
       - sqitch.plan
       - deploy/*
+      when: manual
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME	== "master"'
       when: manual
     - when: never
 
