@@ -12,6 +12,7 @@ before_script:
   - git config --global user.email "gitbot@gido.vn"
   - git config --global user.name "Mr. Robot"
   - export CI_PUSH_REPO=git$(echo $CI_REPOSITORY_URL | grep -o "@.*" | sed "s/\//:/")
+  - echo $CI_PUSH_REPO
   - git remote set-url --push origin ${CI_PUSH_REPO}
   - git status
   - go get -u gido.vn/gic/databases/sqitch.git
@@ -34,9 +35,6 @@ staging:
   script:
     - make deploy_stag
   rules:
-    - changes:
-      - .gitlab-ci.yml
-      when: never
     - when: manual
 
 production:
@@ -44,7 +42,4 @@ production:
   script:
     - make deploy_prod
   rules:
-    - changes:
-      - .gitlab-ci.yml
-      when: never
     - when: manual
