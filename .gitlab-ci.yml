@@ -2,22 +2,20 @@ stages:
   - gen
   - staging
   - production
-
-before_script:
-  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$GIT_SSH_PKEY")
-  - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
-  - git config --global user.email "gitbot@gido.vn"
-  - git config --global user.name "Mr. Robot"
-  - export CI_PUSH_REPO=git$(echo $CI_REPOSITORY_URL | grep -o "@.*" | sed "s/\//:/")
-  - echo $CI_PUSH_REPO
-  - git remote set-url --push origin ${CI_PUSH_REPO}
-  - git status
   
 gen:
   stage: gen
   before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PKEY")
+    - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
+    - git config --global user.email "gitbot@gido.vn"
+    - git config --global user.name "Mr. Robot"
+    - export CI_PUSH_REPO=git$(echo $CI_REPOSITORY_URL | grep -o "@.*" | sed "s/\//:/")
+    - echo $CI_PUSH_REPO
+    - git remote set-url --push origin ${CI_PUSH_REPO}
+    - git status
     - go get -u gido.vn/gic/databases/sqitch.git
   script:
     - sqitch.git -schema schema/schema.yml -name ${CI_COMMIT_SHA} -d ${CI_COMMIT_SHA}
@@ -35,6 +33,16 @@ gen:
 staging:
   stage: staging
   before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PKEY")
+    - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
+    - git config --global user.email "gitbot@gido.vn"
+    - git config --global user.name "Mr. Robot"
+    - export CI_PUSH_REPO=git$(echo $CI_REPOSITORY_URL | grep -o "@.*" | sed "s/\//:/")
+    - echo $CI_PUSH_REPO
+    - git remote set-url --push origin ${CI_PUSH_REPO}
+    - git status
     - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
   script:
     - make deploy_stag
@@ -48,6 +56,16 @@ staging:
 production:
   stage: production
   before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PKEY")
+    - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
+    - git config --global user.email "gitbot@gido.vn"
+    - git config --global user.name "Mr. Robot"
+    - export CI_PUSH_REPO=git$(echo $CI_REPOSITORY_URL | grep -o "@.*" | sed "s/\//:/")
+    - echo $CI_PUSH_REPO
+    - git remote set-url --push origin ${CI_PUSH_REPO}
+    - git status
     - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
   script:
     - make deploy_prod
