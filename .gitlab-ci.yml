@@ -14,7 +14,7 @@ before_script:
   - git config --global user.name "Mr. Robot"
   - go get -u gido.vn/gic/databases/sqitch.git
   - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
-  - export CM_MSG=$(curl -H "PRIVATE-TOKEN: $API_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/commits/$CI_COMMIT_SHA" | jq '.message')
+  - export CM_MSG=$(./git_msg.sh)
   
 gen:
   stage: gen
@@ -29,24 +29,18 @@ staging:
   stage: staging
   script:
     - make deploy_stag
-  when: manual
-  only:
-    refs:
-      - master
   rules:
     - changes:
       - .gitlab-ci.yml
       when: never
+    - when: manual
 
 production:
   stage: production
   script:
     - make deploy_prod
-  when: manual
-  only:
-    refs:
-      - master
   rules:
     - changes:
       - .gitlab-ci.yml
       when: never
+    - when: manual
