@@ -34,6 +34,9 @@ staging:
   script:
     - make deploy_stag
   rules:
+    - changes:
+      - sqitch.plan
+      - deploy/*
     - when: manual
 
 production:
@@ -41,4 +44,7 @@ production:
   script:
     - make deploy_prod
   rules:
+    - changes:
+      - sqitch.plan
+      - deploy/*
     - when: manual
