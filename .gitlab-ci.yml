@@ -19,7 +19,7 @@ before_script:
 gen:
   stage: gen
   script:
-    - sqitch.git -schema/schema.yml -name ${CI_COMMIT_SHORT_SHA}-${CM_MSG} -d "$CM_MSG"
+    - sqitch.git -schema schema/schema.yml -name ${CI_COMMIT_SHORT_SHA}-${CM_MSG} -d "$CM_MSG"
   rules:
     - changes:
       - .gitlab-ci.yml
