@@ -12,7 +12,7 @@ before_script:
   - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
   - git config --global user.email "gitbot@gido.vn"
   - git config --global user.name "Mr. Robot"
-  - curl -H "PRIVATE-TOKEN: $API_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/commits/$CI_COMMIT_SHA"
+  - 'curl -H "PRIVATE-TOKEN: $API_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/commits/$CI_COMMIT_SHA"'
   - go get -u gido.vn/gic/databases/sqitch.git
   - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
   - export CM_MSG=$(./git_msg.sh)
