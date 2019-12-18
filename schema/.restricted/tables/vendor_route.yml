@@ -6,28 +6,24 @@ fields:
     old_name:
     type: bigserial
     primary: true
-  - name: category
+  - name: starting_hub_id
+    old_name:
+    type: bigint
+    not_null: true
+  - name: ending_hub_id
+    old_name:
+    type: bigint
+    not_null: true
+  - name: starting_checkpoint
     old_name:
     type: text
-    not_null: true
-  - name: sub_category
+  - name: ending_checkpoint
     old_name:
     type: text
-    not_null: true
-  - name: description_vi
-    old_name:
-    type: text
-    not_null: true
-  - name: description_en
-    old_name:
-    type: text
-    not_null: true
-  - name: active
+  - name: status
     old_name:
     type: bool
-    not_null: true
-  - name: action_admin_id
-    type: bigint
+    default: true
   - name: created_at
     old_name:
     type: timestamptz
@@ -35,11 +31,10 @@ fields:
     old_name:
     type: timestamptz
 indexs:
-  - name: vendor_service_id_idx
+  - name: vendor_route_id_idx
     key: id
     using: btree
-histories:
-  - none_field: true
+
 drop_fields:
 #  -name: fieldname
 #  -name: fieldname

@@ -2,3 +2,5 @@
 %project=gido-v1.0
 %uri=https://gido.vn/gic/databases/gido-v1.0
 
+001-hello 2019-12-18T04:11:45Z Quang Nguyen <quang@GIDO-TECH-MB0046.local> # Add schema 001-hello
+002-remove-not-null-in-vendor 2019-12-18T04:24:49Z Quang Nguyen <quang@GIDO-TECH-MB0046.local> # Add schema 002-remove-not-null-in-vendor

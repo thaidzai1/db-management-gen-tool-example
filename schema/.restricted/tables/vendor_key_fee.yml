@@ -6,11 +6,7 @@ fields:
     old_name:
     type: bigserial
     primary: true
-  - name: category
-    old_name:
-    type: text
-    not_null: true
-  - name: sub_category
+  - name: fee
     old_name:
     type: text
     not_null: true
@@ -22,12 +18,10 @@ fields:
     old_name:
     type: text
     not_null: true
-  - name: active
+  - name: unit
     old_name:
-    type: bool
+    type: text
     not_null: true
-  - name: action_admin_id
-    type: bigint
   - name: created_at
     old_name:
     type: timestamptz
@@ -35,11 +29,16 @@ fields:
     old_name:
     type: timestamptz
 indexs:
-  - name: vendor_service_id_idx
+  - name: vendor_key_fee_id_idx
     key: id
     using: btree
-histories:
-  - none_field: true
+  - name: vendor_key_fee_fee_idx
+    key: fee
+    using: btree
+  - name: vendor_key_unit_id_idx
+    key: unit
+    using: btree
+
 drop_fields:
 #  -name: fieldname
 #  -name: fieldname

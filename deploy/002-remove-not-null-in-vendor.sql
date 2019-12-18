@@ -1,0 +1,61 @@
+
+BEGIN;
+
+/*-- TRIGGER BEGIN --*/
+
+/*-- TRIGGER END --*/
+
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN bank_account_name DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN bank_account_number DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN bank_name DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN bank_branch DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN swift_code DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN payment_type DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN tax_code DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN legal_representative DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN contact_name DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN contact_phone DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN contact_email DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN action_admin_id DROP NOT NULL;
+
+	
+		ALTER TABLE IF EXISTS vendor
+			ALTER COLUMN active DROP NOT NULL;
+
+	
+
+COMMIT;
