@@ -1,0 +1,27 @@
+stages:
+  - gen
+  - staging
+  - production
+  
+gen:
+  stage: gen
+  scripts:
+    - make gen
+    
+staging:
+  stage: staging
+  scripts:
+    - make deploy_stag
+  when: manual
+  only:
+    refs:
+      - master
+
+production:
+  stage: production
+  scripts:
+    - make deploy_prod
+  when: manual
+  only:
+    refs:
+      - master
