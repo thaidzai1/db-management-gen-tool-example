@@ -41,7 +41,8 @@ indexs:
   - name: vendor_fee_tier_vendor_key_fee_id_idx
     key: vendor_key_fee_id
     using: btree
-
+histories:
+  - none_field: true
 drop_fields:
 #  -name: fieldname
 #  -name: fieldname
