@@ -2,26 +2,51 @@ stages:
   - gen
   - staging
   - production
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - 'which jq || ( apt-get update -y && apt-get install jq -y )'
+  - 'which curl || ( apt-get update -y && apt-get install curl -y )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$GIT_SSH_PKEY")
+  - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
+  - git config --global user.email "gitbot@gido.vn"
+  - git config --global user.name "Mr. Robot"
+  - go get -u gido.vn/gic/databases/sqitch.git
+  - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
+  - export CM_MSG=$(curl -H "PRIVATE-TOKEN: $API_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/commits/$CI_COMMIT_SHA" | jq '.message')
   
 gen:
   stage: gen
-  scripts:
-    - make gen
+  script:
+    - sqitch.git -schema/schema.yml -name ${CI_COMMIT_SHORT_SHA}-${CM_MSG} -d "$CM_MSG"
+  rules:
+    - changes:
+      - .gitlab-ci.yml
+      when: never
     
 staging:
   stage: staging
-  scripts:
+  script:
     - make deploy_stag
   when: manual
   only:
     refs:
       - master
+  rules:
+    - changes:
+      - .gitlab-ci.yml
+      when: never
 
 production:
   stage: production
-  scripts:
+  script:
     - make deploy_prod
   when: manual
   only:
     refs:
       - master
+  rules:
+    - changes:
+      - .gitlab-ci.yml
+      when: never
