@@ -24,6 +24,7 @@ gen:
     - changes:
       - .gitlab-ci.yml
       when: never
+    - when: always
     
 staging:
   stage: staging
