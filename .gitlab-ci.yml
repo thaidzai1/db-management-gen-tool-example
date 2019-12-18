@@ -5,7 +5,6 @@ stages:
 
 before_script:
   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-  - 'which jq || ( apt-get update -y && apt-get install jq -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PKEY")
   - git config --global url."ssh://git@g.ghn.vn".insteadOf "https://gido.vn"
