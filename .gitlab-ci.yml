@@ -56,7 +56,8 @@ staging:
       - deploy/*
       - sqitch.plan
   except:
-    - merge_request
+    refs:
+      - merge_request
   when: manual
 
 production:
