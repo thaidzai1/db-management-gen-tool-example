@@ -1,22 +1,3 @@
 %syntax-version=1.0.0
 %project=gido-v1.0
 %uri=https://gido.vn/gic/databases/gido-v1.0
-
-001-hello 2019-12-18T04:11:45Z Quang Nguyen <quang@GIDO-TECH-MB0046.local> # Add schema 001-hello
-002-remove-not-null-in-vendor 2019-12-18T04:24:49Z Quang Nguyen <quang@GIDO-TECH-MB0046.local> # Add schema 002-remove-not-null-in-vendor
-ff05a0c3 2019-12-18T11:05:29Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # ff05a0c3751bd2800d2927d669a6fcc0c5ff0b05
-c6ce174e 2019-12-18T11:10:49Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # c6ce174e9b29036c0de95e5834a9897eaafdd933
-4b6c8de1 2019-12-18T11:15:35Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 4b6c8de18a41fd1869a2e94fc6c9d6ab22fe1cb0
-313d16e2 2019-12-18T11:31:34Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 313d16e27a26d78cf3a62906164266900746030c
-e8d3ab39 2019-12-18T11:37:40Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # e8d3ab391ab2cb4e2d1b028282be7b1ee44b05be
-8baa50fb 2019-12-18T11:46:15Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 8baa50fbfab490169841a0b0e2ac2a855df9f8ff
-41f7155c 2019-12-18T14:21:46Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 41f7155c6114b1c55a9d172aa660d0f29c316eb5
-1318c98b 2019-12-18T14:28:51Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 1318c98b2d9b577189c6f86dba4757ac5d12237b
-e3e9c3f5 2019-12-19T02:24:27Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # e3e9c3f5210632c20d75599eae3b5b422109fbbb
-c0014c67 2019-12-19T02:41:35Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # c0014c6797ba2d00c52ac3a0f344127e37629ef7
-d5c4f00c 2019-12-19T03:53:06Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # d5c4f00cb9229bde44d937f3574a3031703952ec
-b24086e7 2019-12-19T03:55:41Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # b24086e73e990510abf957495a0d5d98bdd08534
-23b371f9 2019-12-19T04:32:06Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 23b371f92ba6a108ee84ef80f33657488d3f71ef
-2ea8d947 2019-12-19T04:34:36Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 2ea8d9471cf5a66a5387f5dabb0d6924250b1987
-09ccf413 2019-12-19T04:38:39Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # 09ccf413682c6cb162a24bfa220b0386c17725e1
-dd8c6728 2019-12-19T06:54:49Z root <root@runner-3e3MfQD2-project-1286-concurrent-0> # dd8c6728b957783cb2eb5cec9a005f7b87ca798e
