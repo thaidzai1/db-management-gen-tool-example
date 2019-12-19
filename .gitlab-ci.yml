@@ -27,12 +27,11 @@ gen:
   only:
     refs:
       - staging
-    - changes:
+    changes:
       - schema/tables/*
       - schema/dropped-tables/dropped-tables.yml
       - schema/functions/*
-    when: always
-  when: never
+  when: always
     
 staging:
   stage: staging
