@@ -24,13 +24,15 @@ gen:
     - 'git branch -D tmp_branch || true'
     - git status
     - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
-  rules:
+  only:
+    refs:
+      - staging
     - changes:
       - schema/tables/*
-      - schema/dropped-tables/*
+      - schema/dropped-tables/dropped-tables.yml
       - schema/functions/*
-      when: always
-    - when: never
+    when: always
+  when: never
     
 staging:
   stage: staging
