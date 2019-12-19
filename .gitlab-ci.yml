@@ -61,7 +61,6 @@ staging:
     changes:
       - sqitch.plan
       - deploy/*
-      - README.md
   when: manual
   except:
     refs:

@@ -38,6 +38,8 @@ indexs:
   - name: vendor_key_unit_id_idx
     key: unit
     using: btree
+histories:
+  -none_field: true
 
 drop_fields:
 #  -name: fieldname
