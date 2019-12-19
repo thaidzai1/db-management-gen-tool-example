@@ -47,14 +47,10 @@ staging:
     - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
   script:
     - make deploy_stag
+    - 'git branch -D tmp_branch || true'
+    - git status
+    - 'git checkout -b tmp_branch && git add schema/.restricted/ && git commit -m "[ROBOT] Auto update .restricted folder from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
     - 'curl -X POST ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/merge_requests -H "Content-Type: application/json" -H "PRIVATE-TOKEN: ${API_TOKEN}" -d "{\"id\": \"${CI_PROJECT_ID}\", \"source_branch\": \"staging\", \"target_branch\": \"master\", \"title\": \"[ROBOT] Auto create merge request from staging to master\"}"'
-  # rules:
-  #   - if: '$CI_COMMIT_REF_NAME == "staging"'
-  #     changes:
-  #     - sqitch.plan
-  #     - deploy/*
-  #     when: manual
-  #   - when: never
   only:
     refs:
       - staging
