@@ -61,7 +61,7 @@ staging:
     changes:
       - sqitch.plan
       - deploy/*
-      - .gitlab-ci.yml
+      - README.md
   when: manual
   except:
     refs:
