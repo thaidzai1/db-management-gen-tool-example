@@ -26,11 +26,11 @@ gen:
     - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
   rules:
     - changes:
-      - sqitch.plan
-      - deploy/*
-      - schema/.restricted/**/*
-      when: never
-    - when: always
+      - schema/tables/*
+      - schema/dropped-tables/*
+      - schema/functions/*
+      when: always
+    - when: never
     
 staging:
   stage: staging
