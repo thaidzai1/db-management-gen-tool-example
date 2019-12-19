@@ -3,9 +3,8 @@ image: gidotech/sqitch
 stages:
   - gen
   - staging
-  - merge_request
   - production
-
+  
 gen:
   stage: gen
   before_script:
@@ -25,6 +24,7 @@ gen:
     - 'git branch -D tmp_branch || true'
     - git status
     - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
+  interruptible: true
   rules:
     - changes:
       - sqitch.plan
@@ -49,16 +49,23 @@ staging:
   script:
     - make deploy_stag
     - 'curl -X POST ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/merge_requests -H "Content-Type: application/json" -H "PRIVATE-TOKEN: ${API_TOKEN}" -d "{\"id\": \"${CI_PROJECT_ID}\", \"source_branch\": \"staging\", \"target_branch\": \"master\", \"title\": \"[ROBOT] Auto create merge request from staging to master\"}"'
+  # rules:
+  #   - if: '$CI_COMMIT_REF_NAME == "staging"'
+  #     changes:
+  #     - sqitch.plan
+  #     - deploy/*
+  #     when: manual
+  #   - when: never
   only:
-    refs: 
+    refs:
       - staging
     changes:
-      - deploy/*
       - sqitch.plan
+      - deploy/*
+  when: manual
   except:
     refs:
       - merge_request
-  when: manual
 
 production:
   stage: production
