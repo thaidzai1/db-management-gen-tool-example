@@ -55,7 +55,7 @@ staging:
       - deploy/*
       when: manual
     - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME	== "master"'
-      when: manual
+      when: never
     - when: never
 
 production:
