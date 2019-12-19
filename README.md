@@ -1,3 +1,3 @@
 # Database 
 
-All Database schema invoke CI
+All Database schema
