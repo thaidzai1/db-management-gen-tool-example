@@ -5,8 +5,6 @@ stages:
   - staging
   - production
 
-interruptible: true
-
 gen:
   stage: gen
   before_script:
