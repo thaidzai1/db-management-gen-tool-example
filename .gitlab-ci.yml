@@ -28,7 +28,7 @@ gen:
     - changes:
       - sqitch.plan
       - deploy/*
-      - schema/.restricted/*
+      - schema/.restricted/**/*
       when: never
     - when: always
     
