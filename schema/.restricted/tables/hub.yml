@@ -1,0 +1,49 @@
+
+version: 1
+version_name: 1 - Init
+fields:
+  - name: id
+    type: bigserial
+    primary: true
+    not_null: true
+  - name: code
+    old_name:
+    type: text
+    unique: true
+  - name: name
+    old_name:
+    type: text
+    not_null: true
+    unique: true
+  - name: description
+    old_name:
+    type: text
+  - name: address
+    old_name:
+    type: text
+  - name: country
+    old_name:
+    type: text
+  - name: created_at
+    old_name:
+    type: timestamp
+  - name: updated_at
+    old_name:
+    type: timestamp
+  - name: active
+    old_name:
+    type: boolean
+indexs:
+  - name: hub_id_idx
+    key: id
+    using: btree
+  - name: hub_code_idx
+    key: code
+    using: btree
+  - name: hub_name_idx
+    key: name
+    using: btree
+
+drop_fields:
+#  -name: fieldname
+#  -name: fieldname
