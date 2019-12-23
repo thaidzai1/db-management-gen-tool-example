@@ -14,3 +14,4 @@ dropped_tables:
     - tracking_merchant_order_rel
     - tracking_number_history
     - transit_quotation
+    - hscode

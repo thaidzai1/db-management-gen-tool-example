@@ -7,9 +7,12 @@ fields:
     type: bigint
     primary: true
     not_null: true
-  - name: hscode_id
+  - name: hscode
     old_name:
-    type: bigint
+    type: text
+  - name: customs_hscode
+    old_name:
+    type: text
   - name: merchant_order_id
     old_name:
     type: bigint
@@ -101,5 +104,6 @@ indexs:
     using: btree
 
 drop_fields:
+  - name: hscode_id
 #  -name: fieldname
 #  -name: fieldname
