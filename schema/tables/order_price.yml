@@ -72,4 +72,4 @@ indexs:
 
 drop_fields:
 #  -name: fieldname
-#  -name: fieldname
+#  -name: fieldname.
