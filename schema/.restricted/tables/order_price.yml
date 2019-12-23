@@ -13,31 +13,24 @@ fields:
   - name: chargeable_weight
     old_name:
     type: bigint
-    default: 0
   - name: prev_total_price
     old_name:
     type: bigint
-    default: 0
   - name: curr_total_price
     old_name:
     type: bigint
-    default: 0
   - name: additional_price
     old_name:
     type: bigint
-    default: 0
   - name: prev_total_price_vat
     old_name:
     type: bigint
-    default: 0
   - name: curr_total_price_vat
     old_name: total_amount_after_discount_vnd
     type: bigint
-    default: 0
   - name: additional_price_vat
     old_name:
     type: bigint
-    default: 0
   - name: wallet_transactoin_id
     old_name:
     type: text
