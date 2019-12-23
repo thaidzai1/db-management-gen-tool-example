@@ -1,0 +1,56 @@
+version: 1
+version_name: 1 - Init
+fields:
+  - name: id
+    old_name:
+    type: bigint
+    primary: true
+    not_null: true
+  - name: name_vn
+    old_name:
+    type: text
+  - name: name_en
+    old_name:
+    type: text
+  - name: name_kr
+    old_name:
+    type: text
+  - name: name_cn
+    old_name:
+    type: text
+  - name: description
+    old_name:
+    type: text
+  - name: user_id
+    old_name:
+    type: bigint
+  - name: created_at
+    old_name:
+    type: timestamp
+    not_null: true
+  - name: updated_at
+    old_name:
+    type: timestamp
+    not_null: true
+indexs:
+  - name: hscode_id
+    key: id
+    using: btree
+  - name: hscode_created_at
+    key: created_at
+    using: btree
+  - name: hscode_updated_at
+    key: updated_at
+    using: btree
+  - name: hscode_user_id
+    key: user_id
+    using: btree
+  - name: hscode_name_vn
+    key: name_vn
+    using: btree
+  - name: hscode_name_kr
+    key: name_kr
+    using: btree
+  - name: hscode_name_cn
+    key: name_cn
+    using: btree
