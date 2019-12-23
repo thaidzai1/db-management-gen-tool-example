@@ -13,7 +13,6 @@ fields:
   - name: chargeable_weight
     old_name:
     type: bigint
-    not_null: true
   - name: prev_total_price
     old_name:
     type: bigint
@@ -72,4 +71,4 @@ indexs:
 
 drop_fields:
 #  -name: fieldname
-#  -name: fieldname.
+#  -name: fieldname
