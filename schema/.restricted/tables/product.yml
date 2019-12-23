@@ -7,6 +7,9 @@ fields:
     type: bigint
     primary: true
     not_null: true
+  - name: hscode_id
+    old_name:
+    type: bigint
   - name: merchant_order_id
     old_name:
     type: bigint
