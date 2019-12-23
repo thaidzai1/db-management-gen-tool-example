@@ -1,0 +1,18 @@
+
+BEGIN;
+
+/*-- TRIGGER BEGIN --*/
+
+/*-- TRIGGER END --*/
+
+	
+	ALTER TABLE IF EXISTS product
+		ADD COLUMN IF NOT EXISTS hscode text;
+	
+	ALTER TABLE IF EXISTS product
+		ADD COLUMN IF NOT EXISTS customs_hscode text;
+ALTER TABLE IF EXISTS product
+	DROP COLUMN IF EXISTS hscode_id CASCADE;
+DROP TABLE IF EXISTS hscode CASCADE;
+
+COMMIT;
