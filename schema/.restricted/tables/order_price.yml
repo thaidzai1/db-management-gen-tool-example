@@ -38,8 +38,8 @@ fields:
     old_name:
     type: bigint
     default: 0
-  - name: wallet_transactoin_id
-    old_name:
+  - name: wallet_transaction_id
+    old_name: wallet_transactoin_id
     type: text
   - name: wallet_transaction_state
     old_name: 
