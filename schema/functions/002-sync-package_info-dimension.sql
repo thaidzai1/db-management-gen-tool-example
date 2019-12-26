@@ -1,4 +1,4 @@
-CREATE FUNCTION public.sync_order_item_package_info() RETURNS trigger
+CREATE OR REPLACE FUNCTION public.sync_order_item_package_info() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 DECLARE
