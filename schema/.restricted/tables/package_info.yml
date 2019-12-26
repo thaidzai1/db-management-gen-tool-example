@@ -58,6 +58,12 @@ fields:
   - name: actual_weight
     old_name:
     type: bigint
+  - name: actual_length
+    type: integer
+  - name: actual_width
+    type: integer
+  - name: actual_height
+    type: integer
 indexs:
   - name: package_info_created_at_idx
     key: created_at
