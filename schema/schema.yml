@@ -4,6 +4,7 @@ version_name: 1 - Init project
 schemas:
   tables: schema/tables
   functions: schema/functions
+  generated_functions: schema/.restricted/functions
   curr_tables: schema/.restricted/tables
   dropped_tables: schema/.restricted/dropped-tables
   dropped_tables_config: schema/dropped-tables
