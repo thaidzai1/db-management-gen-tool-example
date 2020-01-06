@@ -5,9 +5,9 @@ DECLARE
     rec record;
     changes JSONB;
 BEGIN
-    IF NEW.state != "" THEN
+    IF NEW.state <> '' THEN
         SELECT * INTO rec FROM order_price WHERE wallet_transaction_id = NEW.id LIMIT 1;
-        IF rec != null THEN
+        IF rec <> null THEN
             UPDATE order_price set wallet_transaction_state = NEW.state WHERE id = rec.id;
         END IF;
     END IF;
