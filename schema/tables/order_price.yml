@@ -40,7 +40,7 @@ fields:
     default: 0
   - name: wallet_transaction_id
     old_name: wallet_transactoin_id
-    type: text
+    type: bigint
   - name: wallet_transaction_state
     old_name: 
     type: text
