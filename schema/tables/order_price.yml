@@ -30,8 +30,8 @@ fields:
     old_name:
     type: bigint
     default: 0
-  - name: total_amount_after_discount_vnd
-    old_name: curr_total_price_vat
+  - name: curr_total_price_vat 
+    old_name: total_amount_after_discount_vnd
     type: bigint
     default: 0
   - name: additional_price_vat
