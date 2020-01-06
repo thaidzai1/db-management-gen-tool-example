@@ -23,7 +23,7 @@ gen:
     - sqitch.git -schema schema/schema.yml -name ${CI_COMMIT_SHORT_SHA} -d ${CI_COMMIT_SHA}
     - 'git branch -D tmp_branch || true'
     - git status
-    - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
+    - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ schema/.restricted/functions && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
   only:
     refs:
       - staging
