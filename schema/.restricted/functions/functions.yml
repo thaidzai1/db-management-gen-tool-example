@@ -1,4 +1,4 @@
 functions:
   - 001-first-migrates.sql
-  - 002-sync-package_info-dimension
-  - 003-sync-order_price-wallet_transaction_state
+  - 002-sync-package_info-dimension.sql
+  - 003-sync-order_price-wallet_transaction_state.sql
