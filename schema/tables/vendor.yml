@@ -55,16 +55,16 @@ fields:
     type: bigint
   - name: onboarding_date
     old_name:
-    type: timestamptz
+    type: timestamptztz
   - name: active
     old_name:
     type: bool
   - name: created_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
   - name: updated_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
 indexs:
   - name: vendor_id_idx
     key: id

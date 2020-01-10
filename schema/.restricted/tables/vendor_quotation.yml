@@ -20,9 +20,9 @@ fields:
     type: bigint
     not_null: true
   - name: start_validity_date
-    type: timestamptz
+    type: timestamptztz
   - name: end_validity_date
-    type: timestamptz
+    type: timestamptztz
   - name: currency
     type: text
   - name: vat
@@ -31,10 +31,10 @@ fields:
     type: bigint
   - name: created_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
   - name: updated_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
 indexs:
   - name: vendor_service_id_idx
     key: id

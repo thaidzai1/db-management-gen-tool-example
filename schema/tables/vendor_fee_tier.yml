@@ -27,10 +27,10 @@ fields:
     type: bigint
   - name: created_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
   - name: updated_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
 indexs:
   - name: vendor_fee_tier_id_idx
     key: id

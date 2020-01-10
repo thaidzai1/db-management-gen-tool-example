@@ -26,10 +26,10 @@ fields:
     default: true
   - name: created_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
   - name: updated_at
     old_name:
-    type: timestamptz
+    type: timestamptztz
 indexs:
   - name: vendor_route_id_idx
     key: id
