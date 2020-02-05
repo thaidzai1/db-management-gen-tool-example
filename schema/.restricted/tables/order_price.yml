@@ -46,10 +46,10 @@ fields:
     type: text
   - name: created_at
     old_name:
-    type: timestamptztz
+    type: timestamptz
   - name: updated_at
     old_name:
-    type: timestamptztz
+    type: timestamptz
 indexs:
   - name: order_price_created_at_idx
     key: created_at
