@@ -1,6 +1,6 @@
 type: pg
 username: gido_stag
 password: mhh42mw0IYFQx7w3aENAh
-host: 35.220.166.103
+host: 34.92.64.94
 port: 5432
 db_name: gido_stag
