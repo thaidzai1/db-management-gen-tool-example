@@ -13,4 +13,7 @@ BEGIN
     END IF;
     RETURN NULL;
 END
-$$; 
+$$;
+
+CREATE TRIGGER sync_order_price_wallet_transaction AFTER UPDATE ON wallet_transaction
+    FOR EACH ROW EXECUTE PROCEDURE sync_order_price_wallet_transaction();
