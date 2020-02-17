@@ -1,8 +1,0 @@
-
-BEGIN;
-
-/*-- TRIGGER BEGIN --*/
-
-/*-- TRIGGER END --*/
-
-COMMIT;
