@@ -1,0 +1,6 @@
+type: {TYPE}
+username: {USERNAME}
+password: {PASSWORD}
+host: {HOST}
+port: {PORT}
+db_name: {DB_NAME}

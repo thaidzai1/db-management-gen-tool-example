@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS vendor_quotation (
 );
 CREATE INDEX IF NOT EXISTS vendor_service_id_idx ON "vendor_quotation" USING btree (id);
 CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
-COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+-- COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
 CREATE TABLE IF NOT EXISTS vendor_quotation_history (
 	id bigserial primary key,
 	revision bigint,
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS vendor_service (
 );
 CREATE INDEX IF NOT EXISTS vendor_service_id_idx ON "vendor_service" USING btree (id);
 CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
-COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+-- COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
 CREATE TABLE IF NOT EXISTS vendor_service_history (
 	id bigserial primary key,
 	revision bigint,
@@ -225,7 +225,7 @@ CREATE INDEX IF NOT EXISTS vendor_fee_tier_id_idx ON "vendor_fee_tier" USING btr
 CREATE INDEX IF NOT EXISTS vendor_fee_tier_vendor_quotation_id_idx ON "vendor_fee_tier" USING btree (vendor_quotation_id);
 CREATE INDEX IF NOT EXISTS vendor_fee_tier_vendor_key_fee_id_idx ON "vendor_fee_tier" USING btree (vendor_key_fee_id);
 CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
-COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+-- COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
 CREATE TABLE IF NOT EXISTS vendor_fee_tier_history (
 	id bigserial primary key,
 	revision bigint,
