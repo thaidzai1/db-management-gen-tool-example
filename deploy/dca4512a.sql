@@ -52,7 +52,7 @@ BEGIN;
 			ALTER COLUMN additional_price_vat SET DEFAULT '0';
 	
 	ALTER TABLE IF EXISTS order_price
-		ADD COLUMN IF NOT EXISTS wallet_transactoin_id text;
+		ADD COLUMN IF NOT EXISTS wallet_transactoin_id bigint;
 	
 	ALTER TABLE IF EXISTS order_price
 		ADD COLUMN IF NOT EXISTS wallet_transaction_state text;
