@@ -1,6 +1,9 @@
 
 version: 1
 version_name: 1 - Init
+
+is_table: true
+
 fields:
   - name: id
     old_name:
