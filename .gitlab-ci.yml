@@ -18,9 +18,9 @@ gen:
     - echo $CI_PUSH_REPO
     - git remote set-url --push origin ${CI_PUSH_REPO}
     - git status
-    - go get -u gido.vn/gic/devops/sqitch.git
+    - go get -u gido.vn/gic/devops/sqitch.git/sqitch-gen
   script:
-    - sqitch.git -schema schema/schema.yml -name ${CI_COMMIT_SHORT_SHA} -d ${CI_COMMIT_SHA}
+    - sqitch-gen -schema schema/schema.yml -name ${CI_COMMIT_SHORT_SHA} -d ${CI_COMMIT_SHA}
     - 'git branch -D tmp_branch || true'
     - git status
     - 'git checkout -b tmp_branch && git add sqitch.plan deploy/ schema/.restricted/functions && git commit -m "[ROBOT] Auto generate deploy from [${CI_JOB_ID}](${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID})" && git push origin tmp_branch:staging'
@@ -46,7 +46,7 @@ staging:
     - echo $CI_PUSH_REPO
     - git remote set-url --push origin ${CI_PUSH_REPO}
     - git status
-    - go get -u gido.vn/gic/databases/sqitch.git/scripts/deploy-sqitch
+    - go get -u gido.vn/gic/devops/sqitch.git/src/sqitch-deploy
   script:
     - make deploy_stag
     - 'git branch -D tmp_branch || true'

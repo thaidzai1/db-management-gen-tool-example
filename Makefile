@@ -18,7 +18,7 @@ gen:
 	sqitch.git -schema ./schema/schema.yml
 
 deploy_stag:
-	deploy-sqitch -config-file config.staging.yml -schema schema/schema.yml
+	sqitch-deploy -config-file config.staging.yml -schema schema/schema.yml
 
 deploy_prod:
-	deploy-sqitch -config-file config.prod.yml -schema schema/schema.yml
+	sqitch-deploy -config-file config.prod.yml -schema schema/schema.yml
