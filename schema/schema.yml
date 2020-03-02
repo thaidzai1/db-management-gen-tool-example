@@ -7,4 +7,4 @@ schemas:
   generated_functions: schema/.restricted/functions
   curr_tables: schema/.restricted/tables
   dropped_tables: schema/.restricted/dropped-tables
-  dropped_tables_config: schema/dropped-tables
+  dropped_tables_config: schema/dropped-tables/dropped_tables.yml
