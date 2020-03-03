@@ -64,6 +64,8 @@ fields:
     type: integer
   - name: actual_height
     type: integer
+  - name: package_type_id
+    type: bigint
 indexs:
   - name: package_info_created_at_idx
     key: created_at
